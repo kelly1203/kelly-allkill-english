@@ -1088,6 +1088,38 @@
         }
 
         @media (max-width: 900px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-buttons .btn {
+                white-space: nowrap;
+                min-width: 200px;
+            }
+            
+            .stat-number {
+                white-space: nowrap;
+            }
+            
+            .managed-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .managed-card h4 {
+                word-break: keep-all;
+            }
+            
+            .managed-feature span {
+                word-break: keep-all;
+                line-height: 1.6;
+            }
+            
+            .credential-item span {
+                word-break: keep-all;
+                line-height: 1.5;
+            }
             .header {
                 padding: 15px 30px;
             }
