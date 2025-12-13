@@ -130,7 +130,7 @@
         }
 
         .cta-btn {
-            background: linear-gradient(135deg, var(--text-dark), #444);
+            background: linear-gradient(135deg, var(--accent-coral), #FFB6A3);
             color: white;
             padding: 12px 28px;
             border-radius: 50px;
@@ -138,12 +138,12 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 15px rgba(232, 165, 152, 0.4);
         }
 
         .cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(232, 165, 152, 0.5);
         }
 
         /* Hero Section */
@@ -631,23 +631,25 @@
 
         /* Features Section */
         .features {
-            background: linear-gradient(135deg, var(--text-dark), #3D3D3D);
+            background: white;
             margin: 0;
             max-width: none;
-            color: white;
+            color: var(--text-dark);
+            border-top: 1px solid var(--cream-dark);
+            border-bottom: 1px solid var(--cream-dark);
         }
 
         .features .section-tag {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            background: var(--warm-pink);
+            color: var(--accent-coral);
         }
 
         .features .section-title {
-            color: white;
+            color: var(--text-dark);
         }
 
         .features .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-medium);
         }
 
         .features-grid {
@@ -659,8 +661,8 @@
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--cream);
+            border: 1px solid var(--cream-dark);
             border-radius: var(--radius-md);
             padding: 40px 30px;
             text-align: center;
@@ -668,8 +670,9 @@
         }
 
         .feature-card:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: white;
             transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
         }
 
         .feature-icon {
@@ -678,15 +681,16 @@
         }
 
         .feature-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
         }
 
         .feature-desc {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.6;
+            font-size: 1rem;
+            color: var(--text-medium);
+            line-height: 1.7;
         }
 
         /* Schedule Section */
@@ -1199,6 +1203,249 @@
                 gap: 40px;
             }
         }
+
+        /* New Schedule Section Styles */
+        .schedule-section {
+            padding: 120px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .schedule-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .schedule-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-coral);
+        }
+
+        .schedule-card.level1 { border-top: 4px solid #E8967A; }
+        .schedule-card.level2 { border-top: 4px solid #F4B183; }
+        .schedule-card.intensive { border-top: 4px solid #A5D6A7; }
+
+        .schedule-card-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .level1 .schedule-card-badge { background: #FFF0EB; color: #E8967A; }
+        .level2 .schedule-card-badge { background: #FFF3E8; color: #E07B39; }
+        .intensive .schedule-card-badge { background: #E8F5E9; color: #4CAF50; }
+
+        .schedule-card h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .schedule-card .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .schedule-card .target {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .schedule-card .target h4 {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .schedule-card .target p {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        .time-list {
+            list-style: none;
+        }
+
+        .time-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+
+        .time-list li:last-child { border-bottom: none; }
+
+        .time-list .type {
+            width: 110px;
+            font-weight: 600;
+            color: var(--text-medium);
+            flex-shrink: 0;
+        }
+
+        .time-list .time {
+            color: var(--text-dark);
+        }
+
+        /* Benefits Box */
+        .benefits-box {
+            background: linear-gradient(135deg, #E8967A 0%, #F4B183 100%);
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .benefits-box h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .benefit-icon {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-text h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .benefit-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* SNS Box */
+        .sns-box {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .sns-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .sns-box p {
+            color: var(--text-medium);
+            margin-bottom: 30px;
+        }
+
+        .sns-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .sns-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .sns-link.youtube {
+            background: #FFE8E8;
+            color: #FF0000;
+        }
+
+        .sns-link.youtube:hover {
+            background: #FF0000;
+            color: white;
+        }
+
+        .sns-link.instagram {
+            background: linear-gradient(45deg, #FDF497 0%, #FDF497 5%, #FFE8E8 30%, #F5E6FF 60%, #E8F4FF 100%);
+            color: #E1306C;
+        }
+
+        .sns-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .sns-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Schedule Section Mobile */
+        @media (max-width: 900px) {
+            .schedule-cards {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .schedule-section {
+                padding: 80px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .benefits-box {
+                padding: 30px 20px;
+            }
+            .sns-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .sns-link {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1255,7 +1502,7 @@
             </div>
             <div class="hero-image">
                 <div class="hero-image-container">
-                    <img src="images/1.png" alt="켈리 강사">
+                    <img src="https://kelly1203.github.io/kelly-allkill-english/images/1.png" alt="켈리 강사">
                 </div>
                 <div class="floating-card floating-card-1">
                     <div class="floating-card-icon">🏆</div>
@@ -1275,7 +1522,7 @@
     <section class="about" id="about">
         <div class="about-content">
             <div class="about-image">
-                <img src="images/1.png" alt="켈리오 강사">
+                <img src="https://kelly1203.github.io/kelly-allkill-english/images/1.png" alt="켈리오 강사">
                 <div class="about-badge">🏆 2012년~현재</div>
             </div>
             <div class="about-text">
@@ -1397,56 +1644,140 @@
     </section>
 
     <!-- Schedule Section -->
-    <section id="schedule">
+    <section id="schedule" class="schedule-section">
         <div class="section-header">
             <span class="section-tag">SCHEDULE</span>
             <h2 class="section-title">강의유형 및 시간</h2>
-            <p class="section-subtitle">
-                나의 스케줄에 맞는 수업 유형을 선택하세요
-            </p>
+            <p class="section-subtitle">나의 스케줄에 맞는 수업 유형을 선택하세요</p>
         </div>
-        <div class="schedule-table">
-            <div class="schedule-header">
-                <div>강의명</div>
-                <div>유형</div>
-                <div>시간</div>
-                <div>요일</div>
+
+        <div class="schedule-cards">
+            <!-- 1단계 -->
+            <div class="schedule-card level1">
+                <span class="schedule-card-badge">입문 코스</span>
+                <h3>켈리's 올킬영어 1단계</h3>
+                <p class="subtitle">회화 + 청취 + 영작 올킬</p>
+                
+                <div class="target">
+                    <h4>이런 분께 추천!</h4>
+                    <p>회화, 청취, 영작의 기본 틀을 잡고 싶은 분<br>영어 시험 점수는 있는데 회화가 안 되는 분</p>
+                </div>
+                
+                <ul class="time-list">
+                    <li>
+                        <span class="type">🔴 LIVE</span>
+                        <span class="time">월/수 19:00-20:30</span>
+                    </li>
+                    <li>
+                        <span class="type">🏫 현장강의</span>
+                        <span class="time">화/목 19:00-20:30</span>
+                    </li>
+                    <li>
+                        <span class="type">🏫 토요반</span>
+                        <span class="time">토 10:30-13:30</span>
+                    </li>
+                    <li>
+                        <span class="type">📹 VOD</span>
+                        <span class="time">화목 / 수금 / 토요반<br><small style="color:#888;">종강일까지 상시 시청 가능</small></span>
+                    </li>
+                </ul>
             </div>
-            <div class="schedule-row">
-                <div class="course-name">켈리's 올킬영어 1단계</div>
-                <div><span class="schedule-badge badge-live">실시간 LIVE</span></div>
-                <div>19:20 - 21:00</div>
-                <div>월 / 수</div>
+
+            <!-- 2단계 -->
+            <div class="schedule-card level2">
+                <span class="schedule-card-badge">심화 코스</span>
+                <h3>켈리's 올킬영어 2단계</h3>
+                <p class="subtitle">미드 + 영화 심화 학습</p>
+                
+                <div class="target">
+                    <h4>이런 분께 추천!</h4>
+                    <p>문법의 기본기는 있으나 회화 및 청취 실력 향상이 필요한 분</p>
+                </div>
+                
+                <ul class="time-list">
+                    <li>
+                        <span class="type">🔴 LIVE</span>
+                        <span class="time">월/수 21:00-22:00</span>
+                    </li>
+                    <li>
+                        <span class="type">📹 VOD</span>
+                        <span class="time">화목 / 수금 / 토요반<br><small style="color:#888;">종강일까지 상시 시청 가능</small></span>
+                    </li>
+                </ul>
             </div>
-            <div class="schedule-row">
-                <div class="course-name">켈리's 올킬영어 1단계</div>
-                <div><span class="schedule-badge badge-vod">온라인 VOD</span></div>
-                <div>자유 시청</div>
-                <div>화목 / 수금 / 토</div>
+
+            <!-- 1+2단계 집중반 -->
+            <div class="schedule-card intensive">
+                <span class="schedule-card-badge">집중 코스</span>
+                <h3>켈리's 올킬영어 1+2단계</h3>
+                <p class="subtitle">단기간 집중 영어 실력 향상</p>
+                
+                <div class="target">
+                    <h4>이런 분께 추천!</h4>
+                    <p>워홀, 어학연수, 외국계 회사 이직 준비, 자기계발 목적인 분</p>
+                </div>
+                
+                <ul class="time-list">
+                    <li>
+                        <span class="type">🔴 월수 LIVE</span>
+                        <span class="time">19:00-22:00</span>
+                    </li>
+                    <li>
+                        <span class="type">📹 VOD 조합</span>
+                        <span class="time">1단계+2단계 묶음</span>
+                    </li>
+                </ul>
             </div>
-            <div class="schedule-row">
-                <div class="course-name">켈리's 올킬영어 1단계</div>
-                <div><span class="schedule-badge badge-offline">현장 강의</span></div>
-                <div>19:20 - 21:00</div>
-                <div>화 / 목</div>
+        </div>
+
+        <!-- 수강생 혜택 -->
+        <div class="benefits-box">
+            <h3>✨ 모든 수강생 공통 혜택</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔄</span>
+                    <div class="benefit-text">
+                        <h4>무한 반복 시청</h4>
+                        <p>LIVE, VOD 모두 종강일까지 반복 시청 가능</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔀</span>
+                    <div class="benefit-text">
+                        <h4>교차 수강 가능</h4>
+                        <p>주중/주말반 자유롭게 교차 수강</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🎤</span>
+                    <div class="benefit-text">
+                        <h4>1:1 음성 피드백</h4>
+                        <p>관리형 수업 월 6회 음성 피드백 제공</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🏫</span>
+                    <div class="benefit-text">
+                        <h4>현장강의 참여</h4>
+                        <p>사전 연락 시 현장 강의 참여 가능</p>
+                    </div>
+                </div>
             </div>
-            <div class="schedule-row">
-                <div class="course-name">켈리's 올킬영어 2단계</div>
-                <div><span class="schedule-badge badge-live">실시간 LIVE</span></div>
-                <div>21:30 - 22:30</div>
-                <div>월 / 수</div>
-            </div>
-            <div class="schedule-row">
-                <div class="course-name">켈리's 올킬영어 2단계</div>
-                <div><span class="schedule-badge badge-vod">온라인 VOD</span></div>
-                <div>자유 시청</div>
-                <div>화목 / 수금 / 토</div>
-            </div>
-            <div class="schedule-row">
-                <div class="course-name">켈리's 올킬영어 1+2단계</div>
-                <div><span class="schedule-badge badge-live">집중반</span></div>
-                <div>19:20 - 22:30</div>
-                <div>월 / 수</div>
+        </div>
+
+        <!-- SNS -->
+        <div class="sns-box">
+            <h3>켈리's 올킬영어 SNS</h3>
+            <p>실시간 강의 및 영어 학습 콘텐츠를 만나보세요</p>
+            <div class="sns-links">
+                <a href="https://www.youtube.com/@glow_english" target="_blank" class="sns-link youtube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    @glow_english
+                </a>
+                <a href="https://www.instagram.com/kelly_allkillenglish" target="_blank" class="sns-link instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    @kelly_allkillenglish
+                </a>
             </div>
         </div>
     </section>
